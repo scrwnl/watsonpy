@@ -1,3 +1,5 @@
+"""watsonpy is a Python library for the WATSON Notation."""
+
 from collections import deque
 import numpy as np
 
@@ -184,7 +186,7 @@ def parse(code:str):
         elif code[codeptr] == OADD[state]:
             try:
                 v = stack.pop()
-                k = stack.pop
+                k = stack.pop()
                 o = stack.pop()
             except IndexError as exc:
                 raise WatsonVmError("Syntax Error") from exc
