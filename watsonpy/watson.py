@@ -10,7 +10,7 @@ class WatsonVmError(Exception):
 
 
 
-def parse(code:str):
+def parse(code:str) -> list:
     """
     Parse a string of WATSON code and return a list
 
@@ -251,3 +251,45 @@ def parse(code:str):
 
         codeptr += 1
     return list(stack)
+
+def watsonify(data:list) -> str:
+    """
+    Converts a dictionary into a WATSON code
+
+    Parameters
+    ----------
+    data : list
+        The dictionary to convert
+
+    Returns
+    -------
+    str
+        The WATSON code
+    """
+
+    # WATSON Instructions
+    INEW=['B','S']
+    IINC=['u','h']
+    ISHL=['b','a']
+    IADD=['a','k']
+    INEG=['A','r']
+    ISHT=['e','A']
+    ITOF=['i','z']
+    ITOU=['\'','i']
+    FINF=['q','m']
+    FNAN=['t','b']
+    FNEG=['p','u']
+    SNEW=['?','$']
+    SADD=['!','-']
+    ONEW=['~','+']
+    OADD=['M','g']
+    ANEW=['@','v']
+    AADD=['s','?']
+    BNEW=['z','^']
+    BNEG=['o','!']
+    NNEW=['.','y']
+    GDUP=['E','/']
+
+    state = 0
+
+    return ""
