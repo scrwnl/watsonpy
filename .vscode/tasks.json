@@ -6,13 +6,17 @@
         {
             "label": "Test module",
             "type": "shell",
-            "command": "poetry run pytest",
+            "command": "poetry run pytest -v",
             "problemMatcher": []
         },
         {
             "label": "Build module",
             "type": "shell",
             "command": "poetry build",
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
             "problemMatcher": []
         }
     ]
