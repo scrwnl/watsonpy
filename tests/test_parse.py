@@ -1,11 +1,11 @@
 from watsonpy import parse
 
 
-def test_parse_integer_01():
+def test_parse_int_01():
     watson_code = "BBuaBubaBubbbaBubbbbaBubbbbbaBubbbbbba"
     assert parse(watson_code) == [123]
 
-def test_parse_string_01():
+def test_parse_str_01():
     watson_code = "?SShaakShaaaakShaaaaakShaaaaaak-SShkShaaaaakShaaaaaak-SShkShakShaaakShaaaaakShaaaaaak-SShkShakShaakShaaakShaaaaakShaaaaaak-"
     assert parse(watson_code) == ["tako"]
 
