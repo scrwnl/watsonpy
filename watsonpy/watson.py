@@ -1,6 +1,7 @@
 """watsonpy is a Python library for the WATSON Notation."""
 
 from collections import deque
+from typing import Any
 import numpy as np
 
 class WatsonVmError(Exception):
@@ -10,7 +11,7 @@ class WatsonVmError(Exception):
 
 
 
-def parse(code:str) -> list:
+def parse(code:str) -> Any:
     """
     Parse a string of WATSON code and return a list
 
@@ -21,7 +22,7 @@ def parse(code:str) -> list:
 
     Returns
     -------
-    list
+    Any
         The result of parsing
     """
 
@@ -250,15 +251,15 @@ def parse(code:str) -> list:
             stack.append(x)
 
         codeptr += 1
-    return list(stack)
+    return list(stack)[0]
 
-def watsonify(data:list) -> str:
+def watsonify(data:Any) -> str:
     """
     Converts a dictionary into a WATSON code
 
     Parameters
     ----------
-    data : list
+    data : Any
         The dictionary to convert
 
     Returns
