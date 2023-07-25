@@ -1,7 +1,7 @@
 [tool.poetry]
 name = "watsonpy"
 version = "0.1.0"
-description = ""
+description = "WATSON library for Python"
 authors = ["scrwnl <63852665+scrwnl@users.noreply.github.com>"]
 readme = "README.md"
 
