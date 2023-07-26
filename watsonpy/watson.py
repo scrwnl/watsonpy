@@ -4,10 +4,12 @@ from typing import Any
 from .vm import *
 import io
 
-class WatsonVmError(Exception):
-    """
-    Exception class for WATSON VM errors
-    """
+
+class StackUnderFlowException(Exception):
+    pass
+
+class InvalidTypeException(Exception):
+    pass
 
 def loads(watson_code:str) -> Any:
     vm = WatsonVM()
