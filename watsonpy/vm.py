@@ -53,6 +53,9 @@ def iadd(stack:deque) -> None:
             stack.append(x+y)
         else:
             raise InvalidTypeException()
+    else:
+        raise StackUnderFlowException()
+    return
 
 def ineg(stack:deque) -> None:
     if(len(stack) >= 1):
