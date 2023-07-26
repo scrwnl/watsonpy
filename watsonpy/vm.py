@@ -219,7 +219,7 @@ def gswp(stack:deque) -> None:
 
 
 
-def lexer(watson_code:str):
+def lexer(watson_code:str) -> list:
     instructions = [{
         'B': "inew",
         'u': "iinc",
