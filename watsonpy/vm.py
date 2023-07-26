@@ -1,7 +1,11 @@
 from collections import deque
 from typing import Any
-from watson import StackUnderFlowException, InvalidTypeException
 
+class StackUnderFlowException(Exception):
+    pass
+
+class InvalidTypeException(Exception):
+    pass
 
 class WatsonVM():
     def __init__(self) -> None:

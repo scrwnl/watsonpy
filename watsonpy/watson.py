@@ -5,12 +5,6 @@ from .vm import *
 import io
 
 
-class StackUnderFlowException(Exception):
-    pass
-
-class InvalidTypeException(Exception):
-    pass
-
 def loads(watson_code:str) -> Any:
     vm = WatsonVM()
     return vm.exec(lexer(watson_code))
