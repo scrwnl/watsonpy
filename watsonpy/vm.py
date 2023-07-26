@@ -12,9 +12,9 @@ class WatsonVM():
     def __init__(self) -> None:
         self.stack = deque([])
     
-    def exec(self, code:list) -> Any:
-        for i in code:
-            i(self.stack)
+    def exec(self, opcode_list:list) -> Any:
+        for opcode in opcode_list:
+            opcode(self.stack)
         return list(self.stack)[0]
 
 
@@ -271,7 +271,7 @@ def lexer(watson_code:str) -> list:
         ':': "gswp"
         }]
     
-    operations = {
+    opcodes = {
     "inew": inew,
     "iinc": iinc,
     "ishl": ishl,
@@ -301,7 +301,7 @@ def lexer(watson_code:str) -> list:
     state = 0
     for inst in list(watson_code):
         if(instructions[state].get(inst) is not None):
-            output.append(operations[instructions[state][inst]])
+            output.append(opcodes[instructions[state][inst]])
         if(state==0 and inst=='?'):
             state = 1
         elif(state==1 and inst=='$'):
