@@ -13,9 +13,11 @@ def loads(watson_code:str) -> Any:
 def load(watsonFile:io.TextIOWrapper) -> Any:
     return loads(watsonFile.read())
 
+"""
 def dumps(obj:Any) -> str:
     return ""
 
 def dump(obj:str, watsonFile:io.TextIOWrapper) -> None:
     watsonFile.write(dumps(obj))
     return None
+"""
